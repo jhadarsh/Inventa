@@ -1,0 +1,22 @@
+[
+  {
+    "location": "Mumbai",
+    "trendingProduct": "Raincoat",
+    "socialSpike": "+42%",
+    "forecastPercent": 12,
+    "days": [80, 60, 75, 90, 100, 65, 40],
+    "aiSuggestions": [
+      "Launch umbrella promo in Mumbai due to expected rainfall"
+    ]
+  },
+  {
+    "location": "Bangalore",
+    "trendingProduct": "Water Bottle",
+    "socialSpike": "+28%",
+    "forecastPercent": 8,
+    "days": [50, 55, 60, 80, 85, 70, 60],
+    "aiSuggestions": [
+      "Move 200 units of water bottles from Kochi to Bengaluru"
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "orderId": "ORD-8832",
+    "city": "Delhi",
+    "fulfilledFrom": "Local Store",
+    "type": "Green Delivery",
+    "eta": "1h 45m",
+    "status": "En Route"
+  },
+  {
+    "orderId": "ORD-7771",
+    "city": "Hyderabad",
+    "fulfilledFrom": "Warehouse",
+    "type": "Express",
+    "eta": "3h",
+    "status": "Delayed"
+  },
+  {
+    "orderId": "ORD-9912",
+    "city": "Mumbai",
+    "fulfilledFrom": "Local Store",
+    "type": "Standard",
+    "eta": "2h 15m",
+    "status": "En Route"
+  },
+  {
+    "orderId": "ORD-6654",
+    "city": "Chennai",
+    "fulfilledFrom": "Warehouse",
+    "type": "Express",
+    "eta": "1h 30m",
+    "status": "En Route"
+  },
+  {
+    "orderId": "ORD-4432",
+    "city": "Kolkata",
+    "fulfilledFrom": "Local Store",
+    "type": "Green Delivery",
+    "eta": "2h",
+    "status": "En Route"
+  }
+]

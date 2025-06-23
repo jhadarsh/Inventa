@@ -1,73 +1,74 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { FiMenu, FiX } from "react-icons/fi";
 
-const Navbar = () => {
+export default function Navbar() {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
-  const links = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Features", path: "/features" },
-    { name: "Projects", path: "/projects" },
-    { name: "Contact", path: "/contact" },
+  const navLinks = [
+    { path: "/", label: "Home" },
+    { path: "/dashboard", label: "Dashboard" },
+    { path: "/inventory", label: "Inventory" },
+    { path: "/forecast", label: "Forecast" },
+    { path: "/delivery", label: "Delivery" },
+    { path: "/blockchain", label: "Blockchain" },
+    { path: "/about", label: "About" }
   ];
 
-  return (
-    <motion.nav
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="w-full fixed top-0 left-0 z-50 bg-white shadow-md"
-    >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-indigo-600">Inventa</h1>
+  const toggleMenu = () => setIsOpen(!isOpen);
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex space-x-6">
-          {links.map((link) => (
-            <motion.div whileHover={{ scale: 1.05 }} key={link.name}>
-              <Link
-                to={link.path}
-                className="text-gray-700 hover:text-indigo-600 transition"
-              >
-                {link.name}
-              </Link>
-            </motion.div>
-          ))}
+  return (
+    <nav className="bg-white shadow-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="text-2xl font-bold text-blue-700">
+          Inventa
+        </Link>
+
+        {/* Mobile menu button */}
+        <div className="md:hidden">
+          <button
+            onClick={toggleMenu}
+            className="text-blue-700 text-2xl focus:outline-none"
+          >
+            {isOpen ? <FiX /> : <FiMenu />}
+          </button>
         </div>
 
-        {/* Hamburger Icon */}
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+        {/* Desktop menu */}
+        <div className="hidden md:flex space-x-6 text-sm font-medium">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={`hover:text-blue-600 transition ${
+                location.pathname === link.path ? "text-blue-700 font-semibold" : "text-gray-700"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu dropdown */}
       {isOpen && (
-        <motion.div
-          initial={{ height: 0 }}
-          animate={{ height: "auto" }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden bg-white px-6 pb-4"
-        >
-          {links.map((link) => (
+        <div className="md:hidden px-6 pb-4 space-y-2 bg-white shadow">
+          {navLinks.map((link) => (
             <Link
-              key={link.name}
+              key={link.path}
               to={link.path}
-              className="block py-2 text-gray-700 hover:text-indigo-600"
               onClick={() => setIsOpen(false)}
+              className={`block text-sm ${
+                location.pathname === link.path ? "text-blue-700 font-semibold" : "text-gray-700"
+              } hover:text-blue-600 transition`}
             >
-              {link.name}
+              {link.label}
             </Link>
           ))}
-        </motion.div>
+        </div>
       )}
-    </motion.nav>
+    </nav>
   );
-};
-
-export default Navbar;
+}

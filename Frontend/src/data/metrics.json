@@ -1,0 +1,8 @@
+[
+  { "label": "Total SKUs", "value": "15,384" },
+  { "label": "Orders in Transit", "value": "627" },
+  { "label": "Fulfillment Accuracy", "value": "98.7%" },
+  { "label": "Carbon Saved", "value": "2.3 tons CO₂" },
+  { "label": "Avg Delivery Time", "value": "2.1 days" },
+  { "label": "On-Time Delivery Rate", "value": "95.2%" }
+]

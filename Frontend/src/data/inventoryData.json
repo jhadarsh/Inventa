@@ -1,0 +1,56 @@
+[
+  {
+    "id": 884,
+    "name": "Running Shoe",
+    "location": "Mumbai Store",
+    "stock": 24
+  },
+  {
+    "id": 777,
+    "name": "Yoga Mat",
+    "location": "Pune DC",
+    "stock": 2
+  },
+  {
+    "id": 999,
+    "name": "Sports Bottle",
+    "location": "Delhi Store",
+    "stock": 15
+  },
+  {
+    "id": 111,
+    "name": "Resistance Band",
+    "location": "Chennai DC",
+    "stock": 3
+  },
+  {
+    "id": 222,
+    "name": "Workout Gloves",
+    "location": "Kolkata Store",
+    "stock": 20
+  },
+  {
+    "id": 333,
+    "name": "Jump Rope",
+    "location": "Bangalore DC",
+    "stock": 1
+  },
+  {
+    "id": 444,
+    "name": "Towel",
+    "location": "Hyderabad Store",
+    "stock": 30
+  },
+  {
+    "id": 555,
+    "name": "Headband",
+    "location": "Ahmedabad DC",
+    "stock": 5
+  },
+  {
+    "id": 686,
+    "name": "Water Bottle",
+    "location": "Surat DC",
+    "stock": 18
+  }
+]
